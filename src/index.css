@@ -7,7 +7,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.textarea{
+
+  overflow: hidden;
+resize: none;
+width: 600px;
+font-size: 1.3rem;
 }
