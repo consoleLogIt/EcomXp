@@ -67,7 +67,7 @@ function ProductDetail(props) {
                   margin: "2%",
                 }}
               >
-                {/* {item.title} */}
+                {productDetail.title}
               </Typography>
               <Typography
                 style={{

@@ -118,17 +118,18 @@ function Poducts(props) {
       ) : (
         products.map((item) => (
           <Card style={{ width: "90%", margin: "2% auto" }}>
-            <CardContent style={{ display: "flex" }}>
+            <CardContent style={{ display: "flex",cursor:"pointer" }}  onClick={() => {
+             return !item.editMode? handleProductDetail(item): null
+
+            } }>
               <Grid md={4}>
                 <Typography component="div">
                   <img
-                    onClick={() => handleProductDetail(item)}
                     alt="product image"
                     src={item.imgUrl}
                     style={{
                       width: "258px",
                       height: "250px",
-                      cursor: "pointer",
                     }}
                   />
                 </Typography>
@@ -217,7 +218,7 @@ function Poducts(props) {
                   <Rating name="read-only" value={item.rating} readOnly />
                 )}
 
-                <Button size="small" color="primary">
+                <Button disabled={item.editMode} size="small" color="primary">
                   Share Now
                 </Button>
               </Grid>
@@ -240,7 +241,7 @@ function Poducts(props) {
                   </IconButton>
                 </Tooltip>
                 <Tooltip title="Delete">
-                  <IconButton>
+                  <IconButton disabled = {item.editMode}>
                     <DeleteIcon
                       fontSize="large"
                       onClick={() => handleDeleteProduct(item.id)}
@@ -250,7 +251,7 @@ function Poducts(props) {
               </Grid>
               <Grid container justify="center" md={2}>
                 <Tooltip title="Add to Cart">
-                  <IconButton>
+                <IconButton disabled = {item.editMode}>
                     <AddShoppingCartIcon
                       fontSize="large"
                       onClick={() => handleAddToCart(item)}

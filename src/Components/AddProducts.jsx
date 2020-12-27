@@ -15,6 +15,7 @@ function AddProducts(props) {
 
     const handleAddProduct  = () => {
         const product = {
+          id:store.getState().productsReducer.products.length,
             imgUrl:urlRef.current.childNodes[1].childNodes[0].value,
             title : nameRef.current.childNodes[1].childNodes[0].value,
             description :  descriptionRef.current.childNodes[1].childNodes[0].value,
